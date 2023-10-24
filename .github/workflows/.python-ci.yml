@@ -1,5 +1,6 @@
 
 name: basic CI
+run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   push:
     branches: [ master, main ]
