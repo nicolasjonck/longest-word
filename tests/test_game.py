@@ -38,8 +38,8 @@ class TestGame:
         assert game.grid == list(test_grid)
 
 
-    def test_is_invalid(self):
-        """ Test if function returns False for invalid words """
+    def test_word_not_in_grid_is_invalid(self):
+        """ Test if function returns False for words which are not in the grid """
         # setup
         game = Game()
         test_grid = 'IRPLANEAD'
@@ -47,4 +47,15 @@ class TestGame:
         game.grid = list(test_grid)
         assert game.is_valid('MOTHER') is False
         assert game.is_valid('PLANES') is False
+        assert game.grid == list(test_grid)
+
+    def test_unkown_word_is_invalid(self):
+        """ Test if function returns False for invalid words """
+        # setup
+        game = Game()
+        test_grid = 'IRPLANEAD'
+        # exercise
+        game.grid = list(test_grid)
+        assert game.is_valid('PRIND') is False
+        assert game.is_valid('NEAD') is False
         assert game.grid == list(test_grid)

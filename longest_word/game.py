@@ -1,5 +1,6 @@
 import random
 import string
+import requests
 
 class Game:
     """ Create Game class """
@@ -14,9 +15,14 @@ class Game:
         if not word:
             return False
         letters = self.grid.copy()
+
+        """ Check all letters in grid """
         for letter in word:
             if letter in letters:
                 letters.remove(letter)
             else:
                 return False
-        return True
+
+        """ Check word exists """
+        response = requests.get(f'https://wagon-dictionary.herokuapp.com/{word}').json()
+        return response['found']
