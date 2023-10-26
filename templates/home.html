@@ -17,6 +17,7 @@
     <form action="/check" id="form" method="post">
       <!--hidden input form that contains the game.grid to be sent alongside the word letters-->
       <input type="hidden" name="grid" value="{{ ''.join(grid) }}">
+      <input type="hidden" name="score" value="{{score}}">
       <!--explicit input form which forces content to uppercase since our `Game` logic only take care of uppercase letters-->
       <input type="text" name="word" onkeyup="this.value = this.value.toUpperCase();">
       <button>Check!</button>

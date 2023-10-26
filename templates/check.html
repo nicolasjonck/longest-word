@@ -18,8 +18,10 @@
       Your word: <strong>{{ word }}</strong>.
       {% if is_valid %}
         <span class="valid">Congrats, it's valid!</span>
+        <span class="valid">Your score is {{ session.score }}</span>
       {% else %}
         <span class="invalid">Sorry, it's invalid...</span>
+        <span class="valid">Your score is {{ session.score }}</span>
       {% endif %}
     </div>
     <div>
